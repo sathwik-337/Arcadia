@@ -1,0 +1,904 @@
+/* ===== IMPORT FONT ===== */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+/* ===== GLOBAL STYLES ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: black;
+  
+  color: white;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+section {
+  padding: 80px 5%;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 60px 20px;
+  }
+}
+
+
+/* ===== NAVBAR STYLES ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 25px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid red;
+   font-family: "Raleway";
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: red;
+  text-shadow: 0 0 8px red, 0 0 12px darkred;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+ 
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: red;
+  text-shadow: 0 0 5px red;
+}
+
+/* ===== MOBILE RESPONSIVENESS ===== */
+.menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: red;
+  cursor: pointer;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 20px 0;
+    gap: 20px;
+    border-top: 1px solid red;
+  }
+
+  .menu-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+}
+
+/* ===== HERO SECTION ===== */
+/* ===== HERO SECTION ===== */
+.hero-section {
+  background: url('assets/bg.jpeg') no-repeat center center/cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-attachment: fixed;
+  position: relative;
+  padding: 0 20px;
+}
+
+.logo-text-container {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 20px 40px;
+
+  /* Black Box + Red Border */
+  background: rgba(0, 0, 0, 0.9);
+  border: 2px solid red;
+  border-radius: 12px;
+
+  /* Red Glow */
+  text-shadow: 0 0 10px red;
+  box-shadow:
+    0 0 10px rgba(255, 0, 0, 0.6),
+    0 0 20px rgba(255, 0, 0, 0.4),
+    0 0 40px rgba(255, 0, 0, 0.2);
+
+  max-width: 100%;
+}
+
+.glow-gradient {
+  background: linear-gradient(270deg, red, crimson, darkred);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientFlow 5s ease infinite, glow 2s ease-in-out infinite;
+  border-right: none !important;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px red, 0 0 10px darkred;
+  }
+  100% {
+    text-shadow: 0 0 10px red, 0 0 20px darkred;
+  }
+}
+
+.sub-text {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: white;
+  margin-top: 10px;
+  font-family: "Raleway";
+}
+
+.register-btn {
+  margin-top: 30px;
+  background: red;
+  color: white;
+  padding: 12px 30px;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  border-radius: 4px;
+  text-decoration: none;
+  box-shadow: 0 0 10px red;
+  transition: background 0.3s;
+  font-family: "Raleway";
+}
+
+.register-btn:hover {
+  background: darkred;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  .logo-text-container {
+    font-size: 2rem;
+    border-right: 2px solid red;
+  }
+
+  .sub-text {
+    font-size: 1rem;
+  }
+
+  .register-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  .hero-section {
+    padding-top: 80px;
+  }
+}
+
+
+.sub-text {
+  font-size: 1.2rem;
+  color: white;
+  margin-top: 10px;
+  font-family: "Raleway";
+}
+
+.container {
+  text-align: center;
+  padding: 30px;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #ff0000;
+  text-shadow: 0 0 20px #ff0000;
+}
+
+.timer {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.time-box {
+  background-color: rgba(255, 0, 0, 0.1);
+  border: 2px solid #ff0000;
+  padding: 20px;
+  border-radius: 15px;
+  width: 100px;
+  box-shadow: 0 0 10px #ff0000;
+  font-family: "Raleway";
+}
+
+.time-box span {
+  display: block;
+  font-size: 2.5rem;
+}
+
+.time-box p {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #fff;
+}
+
+
+
+
+.register-btn {
+  margin-top: 30px;
+  background: red;
+  color: white;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  box-shadow: 0 0 10px red;
+  transition: background 0.3s;
+  font-family: "Raleway";
+}
+
+.register-btn:hover {
+  background: darkred;
+}
+
+/* ===== ABOUT SECTION ===== */
+.about-section {
+  background: url('assets/bgm_wall.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.about-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+  font-family: "Raleway";
+}
+
+.about-title {
+  font-size: 2.5rem;
+  color: red;
+  text-shadow: 0 0 10px red;
+  margin-bottom: 30px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
+}
+
+.about-btn {
+  background: red;
+  color: white;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  box-shadow: 0 0 20px red;
+  transition: 0.3s;
+}
+
+.about-btn:hover {
+  background: darkred;
+  box-shadow: 0 0 30px red;
+}
+
+
+/* ===== GAMES SECTION ===== */
+.games-section {
+  background: url('assets/game_bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+}
+
+.games-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+.games-content {
+  position: relative;
+  z-index: 2;
+  font-family: "Raleway";
+}
+
+.games-title {
+  font-size: 2.5rem;
+  color: red;
+  text-shadow: 0 0 10px red;
+  margin-bottom: 40px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.games-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.game-card {
+  width: 45%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px red;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.game-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px red;
+}
+
+.game-image {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.game-name {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  color: red;
+  text-shadow: 0 0 8px red;
+}
+
+.game-description {
+  font-size: 1rem;
+  color: #ddd;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.game-details {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.game-details li {
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  padding-left: 10px;
+  position: relative;
+  list-style: none;
+}
+
+.game-details li::before {
+  content: "•";
+  color: red;
+  position: absolute;
+  left: 0;
+}
+
+.card-btn {
+  padding: 10px 20px;
+  background-color: red;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  box-shadow: 0 0 10px red;
+  transition: 0.3s ease;
+  display: inline-block;
+  font-family: "Raleway";
+   
+}
+
+.card-btn:hover {
+  background-color: darkred;
+  box-shadow: 0 0 20px red;
+}
+
+@media (max-width: 768px) {
+  .games-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .game-card {
+    width: 100%;
+  }
+  .logo-text {
+    font-size: 2.5rem;
+  }
+  .about-title,
+  .games-title {
+    font-size: 2rem;
+  }
+}
+
+
+.prize-section {
+ background: url('assets/bg_wallpaperbgmi.webp') no-repeat center center/cover;
+  background-attachment: fixed; /* for parallax effect */
+  padding: 80px 20px;
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.prize-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 0;
+}
+
+.prize-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: auto;
+  font-family: 'Raleway';
+}
+
+.prize-title {
+  font-size: 2.5rem;
+  color: red;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px red;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.prize-intro {
+  font-size: 1.1rem;
+  color: #ddd;
+  margin-bottom: 40px;
+}
+
+.prize-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.prize-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 15px red;
+  padding: 25px 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(6px);
+}
+
+.prize-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px red;
+}
+
+.prize-card h3 {
+  color: red;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 8px red;
+}
+
+.amount {
+  font-size: 1.3rem;
+  color: white;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.gold {
+  border-top: 4px solid gold;
+}
+.silver {
+  border-top: 4px solid silver;
+}
+.bronze {
+  border-top: 4px solid #cd7f32;
+}
+
+/* Responsive already works due to single-column layout */
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(5px);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.modal-content.two-column {
+  background: #111;
+  color: #fff;
+  width: 90%;
+  max-width: 1200px;
+  border-radius: 12px;
+  border: 3px solid red;
+  box-shadow: 0 0 20px red;
+  animation: borderGlow 2s infinite alternate;
+  position: relative;
+  overflow: hidden;
+  padding: 1rem 1.5rem;
+}
+
+@keyframes borderGlow {
+  from { box-shadow: 0 0 10px #ff0000; }
+  to   { box-shadow: 0 0 30px #ff0000; }
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2rem;
+  color: #ff0000;
+  cursor: pointer;
+}
+
+/* Tabs */
+.modal-tabs {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.modal-tabs button {
+  background: none;
+  border: 1px solid #ff0000;
+  color: #ff0000;
+  font-weight: bold;
+  padding: 0.5rem 1.2rem;
+  margin: 0 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.modal-tabs button:hover,
+.modal-tabs .active-tab {
+  background: #ff0000;
+  color: #000;
+}
+
+/* 2-Column Flex Layout */
+.modal-body {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.modal-image-wrapper {
+  flex: 1 1 40%;
+}
+
+.modal-image-wrapper img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #ff0000;
+}
+
+.modal-rules-wrapper {
+  flex: 1 1 55%;
+  padding-right: 1rem;
+}
+
+.rules-content {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.rules-content h2 {
+  color: #ff3c3c;
+  margin-bottom: 1rem;
+}
+
+.rules-content ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  line-height: 1.6;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modal-body {
+    flex-direction: column;
+  }
+}
+
+
+
+.contact-section {
+  background-color: #000;
+  color: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+  font-family: 'Raleway';
+}
+
+.contact-title {
+  color: #ff0000;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  font-weight: 600;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.coordinators-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+.coordinator-card {
+  background-color: rgba(255, 0, 0, 0.05);
+  border: 2px solid #ff0000;
+  padding: 2rem 1.2rem;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 320px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 10px transparent;
+}
+
+.coordinator-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #ff0000;
+}
+
+.coordinator-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 3px solid #ff0000;
+}
+
+.coordinator-card h3 {
+  color: #ff4444;
+  margin-bottom: 0.8rem;
+}
+
+.coordinator-card p {
+  margin: 0.4rem 0;
+  font-size: 0.95rem;
+}
+
+.coordinator-card i {
+  margin-right: 8px;
+  color: #ff0000;
+}
+
+.coordinator-card a {
+  color: #00ffff;
+  text-decoration: none;
+}
+
+.coordinator-card a:hover {
+  text-decoration: underline;
+}
+
+.teacher {
+  border: 2px solid #ffaa00;
+}
+
+.teacher h3 {
+  color: #ffaa00;
+}
+
+.teacher .coordinator-img {
+  border-color: #ffaa00;
+}
+
+.parallax-bg {
+  background-image: url('assets/reyn_bg.png'); /* your image path */
+ background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75); /* dark overlay */
+  z-index: -1;
+}
+
+.contact-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+
+
+.shape-divider {
+  height: 100px;
+  background: linear-gradient(to bottom, #000 50%, #111 100%);
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+
+/* Glow Effect */
+.glow-icon {
+  color: #ff0000;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 5px #ff0000; }
+  to { text-shadow: 0 0 15px #ff0000; }
+}
+
+/* FAQ Styling */
+.faq {
+  margin: 1rem auto;
+  max-width: 600px;
+  text-align: left;
+}
+
+.faq-question {
+  background: none;
+  color: #fff;
+  border: 1px solid red;
+  padding: 1rem;
+  width: 100%;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.faq-answer {
+  display: none;
+  padding: 1rem;
+  background: #111;
+  border-left: 3px solid red;
+}
+
+.faq-question.active + .faq-answer {
+  display: block;
+}
+
+/* QR and Brochure */
+.qr-img {
+  max-width: 180px;
+  margin: 1rem auto;
+}
+
+.download-btn {
+  background: #ff0000;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.download-btn:hover {
+  background: #cc0000;
+}
+
+.social-icons {
+  margin-top: 2rem;
+}
+
+.social-icons a {
+  color: #ff0000;
+  margin: 0 1rem;
+  font-size: 1.8rem;
+  transition: transform 0.3s;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+
+/* Scroll Animation */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+

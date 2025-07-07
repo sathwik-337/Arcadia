@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <title>Stranger Things | GameXthon</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+<!-- ✅ NAVBAR -->
+<nav class="navbar">
+  <div class="logo">Arcadia</div>
+  <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+  <label for="menu-toggle" class="hamburger">&#9776;</label>
+
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#games">Games</a></li>
+    <li><a href="#prizes">Prizes</a></li>
+    <li><a href="#register">Register</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ✅ HERO SECTION WITH BACKGROUND VIDEO -->
+<header class="hero-section" id="home">
+  <div class="hero-overlay">
+      <h1 class="logo-text-container">
+    <span id="typewriter"></span>
+  </h1>
+  <p class="sub-text">Join the ultimate gaming experience</p>
+  
+</h1>
+   
+  </div>
+   <!-- TIMER -->
+     <div class="container">
+    
+    <div class="timer">
+      <div class="time-box">
+        <span id="days">00</span>
+        <p>Days</p>
+      </div>
+      <div class="time-box">
+        <span id="hours">00</span>
+        <p>Hours</p>
+      </div>
+      <div class="time-box">
+        <span id="minutes">00</span>
+        <p>Minutes</p>
+      </div>
+      <div class="time-box">
+        <span id="seconds">00</span>
+        <p>Seconds</p>
+      </div>
+    </div>
+  </div>
+      
+    </div> 
+    <a href="#register" class="register-btn">Register Now</a>
+
+</header>
+<!-- ✅ ABOUT SECTION -->
+<section class="about-section" id="about">
+  <div class="about-content">
+    <h2 class="about-title">Welcome to Arcadia'26</h2>
+  <p class="about-text">
+ Arcadia'26 is an exciting multi-title esports showdown, bringing together elite gamers and passionate newcomers for an adrenaline-filled experience like no other. Whether you're a BGMI tactician or a Valorant sharpshooter, Arcadia is your stage to rise and shine.
+</p>
+
+<p class="about-text">
+  Dive into a world of competitive gaming where strategy, teamwork, and precision collide. Arcadia isn’t just another tournament — it’s an immersive experience packed with thrilling matches, high-stakes moments, and intense gameplay designed to push you to your limits.
+</p>
+
+<p class="about-text">
+  Whether you’re a solo warrior or leading a skilled squad, prepare to battle through fast-paced environments and mind-bending challenges. GameXthon is organized with top-tier competitive standards to ensure fairness, excitement, and unforgettable action.
+</p>
+
+<p class="about-text">
+  Our mission is to empower the next generation of gamers through skill-based competition, community engagement, and a platform that rewards strategy, reflexes, and passion for gaming.
+</p>
+
+    <a href="#register" class="btn about-btn">Join the Hunt</a>
+  </div>
+</section>
+
+
+<!-- ✅ GAMES SECTION -->
+<section class="games-section" id="games">
+  <div class="games-content">
+    <h2 class="games-title">Featured Games</h2>
+
+    <div class="games-wrapper">
+  <!-- 🔴 GAME RULES MODAL -->
+<div class="modal-overlay" id="rulesModal">
+  <div class="modal-content two-column">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+
+    <!-- Tab Buttons -->
+   
+    <div class="modal-body">
+      <!-- Left: Image -->
+      <div class="modal-image-wrapper">
+        <img src="assets/rule_card_bgmi.jpg" alt="Game Image" id="modalImage" />
+      </div>
+
+      <!-- Right: Rules -->
+      <div class="modal-rules-wrapper">
+        <!-- BGMI Rules -->
+        <div class="rules-content" id="bgmiRules">
+          <h2>📱 BGMI Rules</h2>
+          <ul>
+            <li><strong>Squad Mode:</strong> 4 players per team</li>
+            <li><strong>Perspective:</strong> TPP only (Classic Erangel)</li>
+            <li>No emulators or third-party tools allowed</li>
+            <li>Stream sniping = disqualification</li>
+            <li>Team name and ID must match registration</li>
+            <li>Voice chat is encouraged</li>
+            <li>Suspicious activity leads to rematch review</li>
+          </ul>
+        </div>
+
+        <!-- Valorant Rules -->
+        <div class="rules-content hidden" id="valorantRules">
+          <h2>🎮 Valorant Rules</h2>
+          <ul>
+            <li>Team size: 5 players per team</li>
+            <li>Best of 1 format (Finals BO3)</li>
+            <li>Map veto by team captains</li>
+            <li>Mic and headphones mandatory</li>
+            <li>Cheating = disqualification</li>
+            <li>Movement & crosshair placement monitored</li>
+            <li>Delays over 10 mins = forfeit</li>
+          </ul>
+        </div>
+        
+      </div>
+       <div class="modal-tabs">
+      <button onclick="showTab('bgmi')" id="bgmiTab" class="active-tab">BGMI</button>
+      <button onclick="showTab('valorant')" id="valorantTab">Valorant</button>
+    </div>
+
+    </div>
+  </div>
+</div>
+
+
+      <!-- BGMI Card (Left) -->
+      <div class="game-card left-card">
+        <img src="assets/bgmicard.webp" alt="BGMI" class="game-image" />
+        <h3 class="game-name">BGMI</h3>
+        <p class="game-description">
+          Battlegrounds Mobile India (BGMI) is a high-intensity battle royale where strategy meets survival. Squad up or go solo in a 100-player match and aim for that Chicken Dinner.
+        </p>
+        <ul class="game-details">
+          <li><strong>Mode:</strong> Squad / Solo</li>
+          <li><strong>Platform:</strong> Mobile (Android / iOS)</li>
+          <li><strong>Game Type:</strong> Battle Royale</li>
+        </ul>
+        <button class="btn card-btn" onclick="openModal()">View  Rules</button>
+
+        <!-- <a href="Rules.html" class="btn card-btn">Register for BGMI</a> -->
+      </div>
+
+      <!-- Valorant Card (Right) -->
+      <div class="game-card right-card">
+        <img src="assets/card_val.jpeg" alt="Valorant" class="game-image" />
+        <h3 class="game-name">Valorant</h3>
+        <p class="game-description">
+          Valorant is a tactical 5v5 first-person shooter that blends sharp gunplay with powerful agent abilities. Coordinate with your team to dominate each round and claim victory.
+        </p>
+        <ul class="game-details">
+          <li><strong>Mode:</strong> 5v5 Team</li>
+          <li><strong>Platform:</strong> PC/Laptop</li>
+          <li><strong>Game Type:</strong> Tactical FPS</li>
+        </ul>
+       <button class="btn card-btn" onclick="openModal()">View Rules</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</section>
+
+<!-- 🏆 PRIZE POOL SECTION -->
+<section class="prize-section" id="prizes">
+  <div class="prize-content">
+    <h2 class="prize-title"><i class="fas fa-trophy"></i> Prize Pool</h2>
+    <p class="prize-intro">Show off your skills and win amazing rewards at GameXthon 2025!</p>
+
+    <div class="prize-stack">
+      <!-- 1st Place -->
+      <div class="prize-card gold">
+        <h3><i class="fas fa-medal"></i> 1st Place</h3>
+        <p class="amount">₹30,000 Cash</p>
+        <p>+ Exclusive Trophy & GameXthon Merch</p>
+      </div>
+
+      <!-- 2nd Place -->
+      <div class="prize-card silver">
+        <h3><i class="fas fa-award"></i> 2nd Place</h3>
+        <p class="amount">₹15,000 Cash</p>
+        <p>+ Certificate & Surprise Goodies</p>
+      </div>
+
+      <!-- 3rd Place -->
+      <div class="prize-card bronze">
+        <h3><i class="fas fa-star"></i> 3rd Place</h3>
+        <p class="amount">₹5,000 Cash</p>
+        <p>+ Digital Certificate</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section parallax-bg" id="contact">
+  <h2 class="contact-title">Contact Us</h2>
+
+  <!-- 📍 Coordinator Cards -->
+  <div class="coordinators-container">
+    <!-- Repeat for each coordinator -->
+    <div class="coordinator-card animate-on-scroll">
+      <h3>Sathwik Kamath</h3>
+      <p><i class="fab fa-whatsapp glow-icon"></i> <a href="https://wa.me/919876543210" target="_blank">Chat on WhatsApp</a></p>
+      <p><i class="fab fa-linkedin glow-icon"></i> <a href="https://linkedin.com/in/sathwik">LinkedIn</a></p>
+      <p><i class="fab fa-instagram glow-icon"></i> <a href="https://instagram.com/sathwikkamath">Instagram</a></p>
+      <p><i class="fas fa-phone glow-icon"></i> +91-9876543210</p>
+    </div>
+    <!-- Add other coordinators here similarly -->
+  </div>
+
+  <!-- 🗺️ Google Maps -->
+  <div class="map-container animate-on-scroll">
+    <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+
+  <!-- ❓ FAQ Accordion -->
+  <div class="faq-section animate-on-scroll">
+    <h3>FAQs</h3>
+    <div class="faq">
+      <button class="faq-question">What are the game formats?</button>
+      <div class="faq-answer">We offer BGMI, Valorant, and other casual titles with different formats per game.</div>
+    </div>
+    <div class="faq">
+      <button class="faq-question">Can we register as a team?</button>
+      <div class="faq-answer">Yes, team registrations are accepted for team-based games like BGMI and Valorant.</div>
+    </div>
+    <!-- Add more FAQ items -->
+  </div>
+
+  <!-- 📲 QR Code -->
+  <div class="qr-section animate-on-scroll">
+    <h3>Scan to Register</h3>
+    <img src="assets/qr-code.png" alt="QR Code" class="qr-img">
+  </div>
+
+  <!-- 📄 Brochure -->
+  <div class="brochure-section animate-on-scroll">
+    <a href="assets/event-brochure.pdf" class="btn download-btn" download>
+      <i class="fas fa-file-download"></i> Download Brochure
+    </a>
+  </div>
+
+  <!-- 🔗 Social Media -->
+  <div class="social-icons">
+    <a href="https://instagram.com/arcadia.event" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://linkedin.com/company/arcadia-event" target="_blank"><i class="fab fa-linkedin"></i></a>
+   
+
+
+
+
+
+
+
+
+
+
+
+   
+   
+
+  <script src="script.js"></script>
+</body>
+</html>
