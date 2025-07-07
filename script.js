@@ -62,7 +62,7 @@ updateCountdown(); // initial call
 
     // Change image
     const img = document.getElementById("modalImage");
-    img.src = tab === "bgmi" ? "assets/rule_card_bgmi.jpg" : "assets/valoran_card.jpg";
+    img.src = tab === "bgmi" ? "Assets/rule_card_bgmi.jpg" : "Assets/valoran_card.jpg";
 
     // Tab active styles
     document.getElementById("bgmiTab").classList.remove("active-tab");
